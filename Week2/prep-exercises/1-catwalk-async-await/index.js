@@ -43,14 +43,16 @@ async function catWalk() {
   const stopPos = window.innerWidth;
 
   
-  // Walk the cat from off-screen to the center
-  await walk(img, startPos, centerPos);
+  while (true) {
+    // Walk the cat from off-screen to the center
+    await walk(img, startPos, centerPos);
 
-  // Dance for a while
-  await dance(img);
+    // Dance for a while
+    await dance(img);
 
-  // Walk the cat to the other side of the screen
-  await walk(img, centerPos, stopPos);
+    // Walk the cat to the other side of the screen
+    await walk(img, centerPos, stopPos);
+  }
 }
 
 window.addEventListener('load', catWalk);
